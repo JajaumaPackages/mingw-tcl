@@ -1,0 +1,23 @@
+--- win/configure.in.mingw32	2011-11-04 13:47:58.000000000 +0100
++++ win/configure.in	2012-08-03 13:57:52.175895099 +0200
+@@ -56,9 +56,17 @@
+ AC_C_INLINE
+ AC_HEADER_STDC
+ 
+-AC_CHECK_TOOL(AR, ar)
+-AC_CHECK_TOOL(RANLIB, ranlib)
+-AC_CHECK_TOOL(RC, windres)
++if test "${target_alias}" = "i686-w64-mingw32" ; then
++   AC_CHECK_TOOL(AR, i686-w64-mingw32-ar)
++   AC_CHECK_TOOL(RANLIB, i686-w64-mingw32-ranlib)
++   AC_CHECK_TOOL(RC, i686-w64-mingw32-windres)
++fi
++if test "${target_alias}" = "x86_64-w64-mingw32" ; then
++   AC_CHECK_TOOL(AR, x86_64-w64-mingw32-ar)
++   AC_CHECK_TOOL(RANLIB, x86_64-w64-mingw32-ranlib)
++   AC_CHECK_TOOL(RC, x86_64-w64-mingw32-windres)
++fi
++
+ 
+ #--------------------------------------------------------------------
+ # Checks to see if the make program sets the $MAKE variable.

@@ -1,0 +1,20 @@
+--- generic/tclPosixStr.c.mingw-w64	2014-06-13 18:24:26.443128384 +0200
++++ generic/tclPosixStr.c	2014-06-13 18:27:17.674963045 +0200
+@@ -344,7 +344,7 @@
+ #ifdef EOTHER
+     case EOTHER: return "EOTHER";
+ #endif
+-#if defined(EOVERFLOW) && (!defined(EFBIG) || (EOVERFLOW != EFBIG)) && (!defined(EINVAL) || (EOVERFLOW != EINVAL))
++#if defined(EOVERFLOW) && (!defined(EFBIG) || (EOVERFLOW != EFBIG)) && (!defined(EINVAL) || (EOVERFLOW != EINVAL)) && !defined(E2BIG)
+     case EOVERFLOW: return "EOVERFLOW";
+ #endif
+ #ifdef EOWNERDEAD
+@@ -804,7 +804,7 @@
+ #ifdef EOTHER
+     case EOTHER: return "other error";
+ #endif
+-#if defined(EOVERFLOW) && (!defined(EFBIG) || (EOVERFLOW != EFBIG)) && (!defined(EINVAL) || (EOVERFLOW != EINVAL))
++#if defined(EOVERFLOW) && (!defined(EFBIG) || (EOVERFLOW != EFBIG)) && (!defined(EINVAL) || (EOVERFLOW != EINVAL)) && !defined(E2BIG)
+     case EOVERFLOW: return "file too big";
+ #endif
+ #ifdef EOWNERDEAD
