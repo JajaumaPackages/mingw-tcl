@@ -10,7 +10,7 @@
 Summary: MinGW Windows Tool Command Language, pronounced tickle
 Name: mingw-%{name1}
 Version: %{vers}
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: TCL
 Group: Development/Languages
 URL: http://tcl.sourceforge.net/
@@ -204,6 +204,9 @@ rm -f $RPM_BUILD_ROOT/%{mingw64_bindir}/zlib1.dll
 %doc license.terms
 
 %changelog
+* Fri Feb 03 2017 Jajauma's Packages <jajauma@yandex.ru> - 8.6.6-2
+- Rebuild with GCC 5.4.0
+
 * Mon Aug 08 2016 Thomas Sailer <t.sailer@alumni.ethz.ch> - 8.6.6-1
 - update to 8.6.6
 
